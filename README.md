@@ -1,8 +1,8 @@
 # NovaMint
 
-**A Revolutionary Creator Monetization Platform on Somnia Testnet**
+**A Revolutionary Creator Monetization Platform on Hedera Network**
 
-NovaMint is a cutting-edge decentralized platform that empowers creators to monetize their digital content through NFTs with built-in royalty distribution. Built on the Somnia Testnet blockchain, our platform revolutionizes how creators earn from their work by providing a seamless, transparent, and fair monetization system.
+NovaMint is a cutting-edge decentralized platform that empowers creators to monetize their digital content through NFTs with built-in royalty distribution. Built on the Hedera Network, our platform revolutionizes how creators earn from their work by providing a seamless, transparent, and fair monetization system.
 
 ## What NovaMint Does
 
