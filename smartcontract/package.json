@@ -1,0 +1,21 @@
+{
+  "name": "smartcontract",
+  "version": "1.0.0",
+  "description": "This project contains the smart contracts for NovaMint, a decentralized creator monetization platform using Hardhat 3 Beta with the native Node.js test runner (`node:test`) and the `viem` library for Ethereum interactions.",
+  "main": "hardhat.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:somnia": "hardhat run scripts/deploy.js --network somniaTestnet",
+    "verify:somnia": "hardhat verify --network somniaTestnet"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0"
+  }
+}
