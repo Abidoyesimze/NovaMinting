@@ -38,25 +38,19 @@ export default {
             timeout: 1800000,
         },
 
+        //  Hedera Testnet Configuration
+        hederaTestnet: {
+            url: process.env.HEDERA_TESTNET_RPC || "https://testnet.hashio.io/api",
+            accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+            gas: 2100000,
+            gasPrice: 8000000000,
+            timeout: 60000,
+            chainId: 296,
+        },
+
         localhost: {
             url: "http://127.0.0.1:8545",
             chainId: 31337,
-            timeout: 60000,
-        },
-
-        // ✅ Hedera Testnet
-        hederaTestnet: {
-            url: process.env.HEDERA_RPC_URL || "https://testnet.hashio.io/api",
-            accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
-            chainId: 296,
-            timeout: 60000,
-        },
-
-        // ✅ Hedera Mainnet
-        hederaMainnet: {
-            url: process.env.HEDERA_MAINNET_RPC_URL || "https://mainnet.hashio.io/api",
-            accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
-            chainId: 295,
             timeout: 60000,
         },
     },
@@ -71,8 +65,20 @@ export default {
         maxMethodDiff: 10,
     },
 
-    sourcify: {
-        enabled: true, // ✅ auto-verify with Sourcify
+    etherscan: {
+        apiKey: {
+            hederaTestnet: process.env.HEDERA_API_KEY || "dummy",
+        },
+        customChains: [
+            {
+                network: "hederaTestnet",
+                chainId: 296,
+                urls: {
+                    apiURL: "https://hashscan.io/testnet/api",
+                    browserURL: "https://hashscan.io/testnet/",
+                },
+            },
+        ],
     },
 
     paths: {

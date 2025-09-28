@@ -66,7 +66,7 @@ export function PurchaseModal({ nft, isOpen, onClose }: PurchaseModalProps) {
     },
     gasEstimate = 0.000005,
     //
-    { ethToDollar, sttToDollar } = useRates();
+    { ethToDollar, hbarToDollar } = useRates();
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -160,7 +160,7 @@ export function PurchaseModal({ nft, isOpen, onClose }: PurchaseModalProps) {
 
                   <div className="flex justify-between items-center">
                     <span className="text-slate-400">Estimated Gas</span>
-                    <span className="text-slate-400">{gasEstimate} ETH</span>
+                    <span className="text-slate-400">{gasEstimate} HBAR</span>
                   </div>
 
                   <Separator className="bg-slate-600" />
@@ -206,10 +206,9 @@ export function PurchaseModal({ nft, isOpen, onClose }: PurchaseModalProps) {
                     <Zap className="w-5 h-5 mr-2" />
                     Purchase for{" "}
                     {Math.floor(
-                      ((nft.price + gasEstimate) * Number(ethToDollar)) /
-                        Number(sttToDollar)
+                      (nft.price + gasEstimate)
                     ).toLocaleString()}{" "}
-                    STT
+                    HBAR
                   </>
                 )}
               </Button>

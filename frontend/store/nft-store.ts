@@ -4,24 +4,24 @@ import { Cr8orAbi, Cr8orAddress } from "@/lib/var";
 import { createConfig, http } from "wagmi";
 
 
-// Define Somnia testnet chain configuration
-const somniaTestnet = {
-  id: 50312,
-  name: "Somnia Testnet",
+// Define Hedera testnet chain configuration
+const hederaTestnet = {
+  id: 296,
+  name: "Hedera Testnet",
   nativeCurrency: {
     decimals: 18,
-    name: "STT",
-    symbol: "STT",
+    name: "HBAR",
+    symbol: "HBAR",
   },
   rpcUrls: {
     default: {
-      http: ["https://dream-rpc.somnia.network"],
+      http: ["https://testnet.hashio.io/api"],
     },
   },
   blockExplorers: {
     default: {
-      name: "Somnia Explorer",
-      url: "https://shannon-explorer.somnia.network",
+      name: "Hashscan",
+      url: "https://hashscan.io/testnet",
     },
   },
   testnet: true,
@@ -29,9 +29,9 @@ const somniaTestnet = {
 import { formatEther } from "viem";
 
 const config = createConfig({
-  chains: [somniaTestnet],
+  chains: [hederaTestnet],
   transports: {
-    [somniaTestnet.id]: http(),
+    [hederaTestnet.id]: http(),
   },
 });
 
@@ -348,7 +348,7 @@ export const useNFTStore = create<NFTState>((set, get) => ({
           )}...${nft.creator.slice(-4)}`,
           timestamp: new Date().toISOString(), // get the actual purchase date later
           tokenId: nft.tokenId.toString(),
-          amount: nft.price > 0 ? `${nft.price} ETH` : undefined,
+          amount: nft.price > 0 ? `${nft.price} HBAR` : undefined,
         });
       });
 

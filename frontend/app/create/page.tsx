@@ -561,7 +561,7 @@ export default function CreatePage() {
                             </div>
 
                             <div>
-                              <Label htmlFor="price">Price (ETH) *</Label>
+                              <Label htmlFor="price">Price (HBAR) *</Label>
                               <Input
                                 id="price"
                                 required
@@ -575,11 +575,11 @@ export default function CreatePage() {
                                   required: "Price is required",
                                   min: {
                                     value: 0.001,
-                                    message: "Minimum price is 0.001 STT",
+                                    message: "Minimum price is 0.001 HBAR",
                                   },
                                   max: {
                                     value: 0.01,
-                                    message: "Maximum price is 0.01 STT",
+                                    message: "Maximum price is 0.01 HBAR",
                                   },
                                   validate: (value) =>
                                     !isNaN(Number(value)) ||

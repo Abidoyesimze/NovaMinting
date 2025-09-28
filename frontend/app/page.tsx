@@ -81,7 +81,7 @@ export default function LandingPage() {
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Link href="/marketplace">
+            <Link href="/gallery">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-blue-600 to-orange-600 hover:from-blue-700 hover:to-orange-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-blue-500/25 transition-all duration-300"

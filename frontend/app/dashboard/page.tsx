@@ -142,7 +142,7 @@ export default function Dashboard() {
               />
               <StatsCard
                 title="Total Earnings"
-                value={`${stats.totalEarnings} ETH`}
+                value={`${stats.totalEarnings} HBAR`}
                 description="Lifetime earnings"
                 // trend={{ value: 23, isPositive: true }}
                 icon={<TrendingUp className="h-4 w-4 text-purple-500" />}

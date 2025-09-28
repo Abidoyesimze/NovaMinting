@@ -27,7 +27,7 @@ export function EarningsChart({ data, totalEarnings, monthlyChange }: EarningsCh
             <CardDescription>Primary sales and royalty earnings</CardDescription>
           </div>
           <div className="text-right">
-            <div className="text-2xl font-bold text-purple-400">{totalEarnings} ETH</div>
+            <div className="text-2xl font-bold text-purple-400">{totalEarnings} HBAR</div>
             <Badge variant={monthlyChange >= 0 ? "default" : "destructive"}>
               {monthlyChange >= 0 ? "+" : ""}
               {monthlyChange}% this month
@@ -41,7 +41,7 @@ export function EarningsChart({ data, totalEarnings, monthlyChange }: EarningsCh
             <div key={index} className="space-y-2">
               <div className="flex justify-between text-sm">
                 <span>{item.month}</span>
-                <span className="font-medium">{(item.primary + item.royalties).toFixed(2)} ETH</span>
+                <span className="font-medium">{(item.primary + item.royalties).toFixed(2)} HBAR</span>
               </div>
               <div className="flex h-2 rounded-full overflow-hidden bg-muted">
                 <div
@@ -54,8 +54,8 @@ export function EarningsChart({ data, totalEarnings, monthlyChange }: EarningsCh
                 />
               </div>
               <div className="flex justify-between text-xs text-muted-foreground">
-                <span>Primary: {item.primary.toFixed(2)} ETH</span>
-                <span>Royalties: {item.royalties.toFixed(2)} ETH</span>
+                <span>Primary: {item.primary.toFixed(2)} HBAR</span>
+                <span>Royalties: {item.royalties.toFixed(2)} HBAR</span>
               </div>
             </div>
           ))}

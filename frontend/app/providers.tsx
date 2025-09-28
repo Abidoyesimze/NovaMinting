@@ -13,26 +13,26 @@ import {
   okxWallet,
   trustWallet,
 } from "@rainbow-me/rainbowkit/wallets";
-// Only using Somnia testnet - removed other chain imports
+// Only using Hedera testnet - removed other chain imports
 
-// Define Somnia testnet chain configuration
-const somniaTestnet = {
-  id: 50312,
-  name: "Somnia Testnet",
+// Define Hedera testnet chain configuration
+const hederaTestnet = {
+  id: 296,
+  name: "Hedera Testnet",
   nativeCurrency: {
     decimals: 18,
-    name: "STT",
-    symbol: "STT",
+    name: "HBAR",
+    symbol: "HBAR",
   },
   rpcUrls: {
     default: {
-      http: ["https://dream-rpc.somnia.network"],
+      http: ["https://testnet.hashio.io/api"],
     },
   },
   blockExplorers: {
     default: {
-      name: "Somnia Explorer",
-      url: "https://shannon-explorer.somnia.network",
+      name: "Hashscan",
+      url: "https://hashscan.io/testnet",
     },
   },
   testnet: true,
@@ -53,7 +53,7 @@ const config = getDefaultConfig({
     ...wallets,
     //
   ],
-  chains: [somniaTestnet],
+  chains: [hederaTestnet],
   ssr: true,
 });
 
@@ -71,7 +71,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
             borderRadius: "large",
           })}
           modalSize="compact"
-          initialChain={somniaTestnet}
+          initialChain={hederaTestnet}
         >
           {children}
         </RainbowKitProvider>

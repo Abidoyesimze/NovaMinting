@@ -6,8 +6,8 @@ import { Card, CardContent } from "@/components/ui/card"
 const stats = [
   { label: "Total NFTs Minted", value: "12,847", icon: "🎨" },
   { label: "Active Creators", value: "3,421", icon: "👨‍🎨" },
-  { label: "Total Volume", value: "2,847 ETH", icon: "💎" },
-  { label: "Royalties Paid", value: "1,234 ETH", icon: "💰" },
+  { label: "Total Volume", value: "2,847 HBAR", icon: "💎" },
+  { label: "Royalties Paid", value: "1,234 HBAR", icon: "💰" },
 ]
 
 export function StatsSection() {

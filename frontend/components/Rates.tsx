@@ -8,7 +8,7 @@ interface RatesProps {
 
 const Rates = ({ nftPrice }: RatesProps) => {
   const //
-    { error, ethToDollar, gettingRates, sttToDollar } = useRates(),
+    { error, ethToDollar, gettingRates, hbarToDollar } = useRates(),
     roundDownDynamically = function (num: number) {
       if (num === 0) return "0";
       return parseFloat(num.toFixed(18)).toString();
@@ -20,22 +20,20 @@ const Rates = ({ nftPrice }: RatesProps) => {
         {gettingRates ? (
           <Spinner />
         ) : (
-          Math.floor(
-            (nftPrice * Number(ethToDollar)) / Number(sttToDollar)
-          ).toLocaleString()
+          nftPrice.toFixed(6).replace(/\.?0+$/, '')
         )}{" "}
-        STT
+        HBAR
       </div>
       <div className="flex items-center space-x-4">
         <div className="text-slate-400 text-sm">
           {gettingRates ? (
             <Spinner />
           ) : (
-            `$${(nftPrice * Number(ethToDollar)).toFixed(1).toLocaleString()}`
+            `$${(nftPrice * Number(hbarToDollar)).toFixed(4).replace(/\.?0+$/, '')}`
           )}
         </div>
         <div className="text-slate-400 text-sm">
-          {gettingRates ? <Spinner /> : roundDownDynamically(nftPrice) + " ETH"}
+          {gettingRates ? <Spinner /> : roundDownDynamically(nftPrice) + " HBAR"}
         </div>
         <div
           data-tooltip="Price data from CoinGecko API"

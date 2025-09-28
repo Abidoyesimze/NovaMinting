@@ -4,16 +4,16 @@ async function main() {
     // Get the deployer account
     const [deployer] = await hre.ethers.getSigners();
 
-    console.log("🚀 Deploying NovaMint to Somnia Shannon Testnet...");
+    console.log("🚀 Deploying NovaMint to Hedera Testnet...");
     console.log("🆔 Deploying with account:", deployer.address);
 
     // Check balance
     const balance = await hre.ethers.provider.getBalance(deployer.address);
-    console.log("💰 Account balance:", hre.ethers.formatEther(balance), "ETH");
+    console.log("💰 Account balance:", hre.ethers.formatEther(balance), "HBAR");
 
     if (balance === 0n) {
         console.log("❌ Insufficient balance for deployment.");
-        console.log("💡 Please fund your account with SOM tokens from: https://faucet.somnia.network/");
+        console.log("💡 Please fund your account with HBAR from: https://portal.hedera.com/faucet");
         return;
     }
 

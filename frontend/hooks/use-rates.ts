@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 interface Rates {
-  sttToDollar: number | null;
+  hbarToDollar: number | null;
   ethToDollar: number | null;
   gettingRates: boolean;
   error: string | null;
@@ -10,7 +10,7 @@ interface Rates {
 
 export function useRates(): Rates {
   const //
-    [sttToDollar, setSttToDollar] = useState<number>(0.4),
+    [hbarToDollar, setHbarToDollar] = useState<number>(0.05),
     [ethToDollar, setEthToDollar] = useState<number>(2418.22),
     [gettingRates, setGettingRates] = useState(true),
     [error, setError] = useState<string | null>(null),
@@ -19,7 +19,7 @@ export function useRates(): Rates {
   useEffect(() => {
     const fetchRates = async () => {
       if (fetched) {
-        return { sttToDollar, ethToDollar, gettingRates, error };
+        return { hbarToDollar, ethToDollar, gettingRates, error };
       }
       setGettingRates(true);
       setError(null);
@@ -31,7 +31,7 @@ export function useRates(): Rates {
         if (!res.ok) throw new Error("Failed to fetch rates");
         setFetched(true);
         const data = await res.json();
-        setSttToDollar(0.4); // STT testnet token - using fixed rate for now
+        setHbarToDollar(0.05); // HBAR testnet token - using fixed rate for now
         setEthToDollar(data.ethereum?.usd ?? null);
       } catch (err: any) {
         setError(err.message || "Unknown error");
@@ -42,5 +42,5 @@ export function useRates(): Rates {
     fetchRates();
   }, []);
 
-  return { sttToDollar, ethToDollar, gettingRates, error, fetched };
+  return { hbarToDollar, ethToDollar, gettingRates, error, fetched };
 }

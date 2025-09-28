@@ -400,7 +400,7 @@ export default function NFTDetailPage() {
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-slate-400">Blockchain</span>
-                      <span className="text-slate-300">Somnia Testnet</span>
+                      <span className="text-slate-300">Hedera Testnet</span>
                     </div>
                   </div>
                 </CardContent>
