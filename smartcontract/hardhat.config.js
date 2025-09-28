@@ -38,19 +38,25 @@ export default {
             timeout: 1800000,
         },
 
-        // ✅ Somnia Shannon Testnet Configuration
-        somniaTestnet: {
-            url: process.env.SOMNIA_TESTNET_RPC || "https://dream-rpc.somnia.network/",
-            accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
-            gas: 2100000,
-            gasPrice: 8000000000,
-            timeout: 60000,
-            chainId: 50312,
-        },
-
         localhost: {
             url: "http://127.0.0.1:8545",
             chainId: 31337,
+            timeout: 60000,
+        },
+
+        // ✅ Hedera Testnet
+        hederaTestnet: {
+            url: process.env.HEDERA_RPC_URL || "https://testnet.hashio.io/api",
+            accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+            chainId: 296,
+            timeout: 60000,
+        },
+
+        // ✅ Hedera Mainnet
+        hederaMainnet: {
+            url: process.env.HEDERA_MAINNET_RPC_URL || "https://mainnet.hashio.io/api",
+            accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+            chainId: 295,
             timeout: 60000,
         },
     },
@@ -65,20 +71,8 @@ export default {
         maxMethodDiff: 10,
     },
 
-    etherscan: {
-        apiKey: {
-            somniaTestnet: process.env.SOMNIA_API_KEY || "dummy",
-        },
-        customChains: [
-            {
-                network: "somniaTestnet",
-                chainId: 50312,
-                urls: {
-                    apiURL: "https://shannon-explorer.somnia.network/api",
-                    browserURL: "https://shannon-explorer.somnia.network/",
-                },
-            },
-        ],
+    sourcify: {
+        enabled: true, // ✅ auto-verify with Sourcify
     },
 
     paths: {
