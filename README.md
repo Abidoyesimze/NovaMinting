@@ -78,9 +78,6 @@ NovaMint removes the middlemen that typically take large cuts from creators' ear
 ### What is an NFT?
 An NFT (Non-Fungible Token) is like a digital certificate of ownership. It proves that you own a specific piece of digital content. Unlike regular files that can be copied, an NFT is unique and can't be duplicated.
 
-### What is Hedera Network?
-Hedera is a blockchain network that's fast, cheap to use, and environmentally friendly. It uses HBAR as its currency, which is much cheaper to use than other cryptocurrencies like Bitcoin or Ethereum.
-
 ### What is IPFS?
 IPFS (InterPlanetary File System) is a way to store files across many computers instead of on one server. This means your content can't be deleted or lost, even if one computer goes offline.
 
@@ -90,7 +87,7 @@ Smart contracts are computer programs that automatically handle transactions. Wh
 ## Platform Features
 
 ### Easy Content Creation
-- Simple drag-and-drop interface for uploading files
+- Simple drag-and-drop/design your own creativity interface for uploading files
 - Automatic storage on IPFS network
 - Preview your content before selling it
 - Support for multiple file types
@@ -106,12 +103,6 @@ Smart contracts are computer programs that automatically handle transactions. Wh
 - Content stored on decentralized network
 - All transactions permanently recorded
 - Secure wallet integration
-
-### Network Benefits
-- Fast transactions on Hedera network
-- Low costs compared to other blockchains
-- Environmentally sustainable
-- Built to handle many users
 
 ## Technology Stack
 
